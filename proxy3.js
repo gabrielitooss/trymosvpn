@@ -2,7 +2,7 @@
 const net = require("net");
 
 const dhost  = process.env.DHOST || "vps1.trymos.com"; // ← tu VPS
-const dport  = parseInt(process.env.DPORT || "80", 10); // ← puerto de tu VPS (WS/HTTP)
+const dport  = parseInt(process.env.DPORT || "22", 10); // ← puerto de tu VPS (WS/HTTP)
 const lport  = parseInt(process.env.PORT  || "8080", 10); // ← puerto que expone Cloud Run/Render/etc.
 const DEBUG  = /^1|true|yes$/i.test(process.env.DEBUG || "");
 
