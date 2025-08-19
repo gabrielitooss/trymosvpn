@@ -11,7 +11,7 @@ var dhost = process.env.DHOST || "vps1.trymos.com";
 var dport = process.env.DPORT || 22;
 var mainPort = process.env.PORT || 8080;
 var outputFile = "outputFile.txt";
-var packetsToSkip = process.env.PACKSKIP || 1;
+var packetsToSkip = process.env.PACKSKIP || 0;
 var gcwarn = true;
 for(c = 0; c < process.argv.length; c++) {
     switch(process.argv[c]) {
@@ -57,7 +57,7 @@ const server = net.createServer();
 server.on('connection', function(socket) {
     var packetCount = 0;
     //var handshakeMade = false;
-    socket.write("HTTP/1.1 101 vip7 Protocols\r\nConnection: Upgrade\r\nDate: " + new Date().toUTCString() + "\r\nSec-WebSocket-Accept: " + Buffer.from(crypto.randomBytes(20)).toString("base64") + "\r\nUpgrade: websocket\r\nServer: p7ws/0.1a\r\n\r\n");
+ //   socket.write("HTTP/1.1 101 vip7 Protocols\r\nConnection: Upgrade\r\nDate: " + new Date().toUTCString() + "\r\nSec-WebSocket-Accept: " + Buffer.from(crypto.randomBytes(20)).toString("base64") + "\r\nUpgrade: websocket\r\nServer: p7ws/0.1a\r\n\r\n");
     console.log("[INFO] Connection received from " + socket.remoteAddress + ":" + socket.remotePort);
     var conn = net.createConnection({host: dhost, port: dport});
     socket.on('data', function(data) {
