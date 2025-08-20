@@ -9,7 +9,7 @@ const stream = require('stream');
 const util = require('util');
 
 var dhost = process.env.DHOST || "vps1.trymos.com";
-var dport = process.env.DPORT || 22;
+var dport = process.env.DPORT || 80;
 var mainPort = process.env.PORT || 8080;
 var outputFile = "outputFile.txt";
 var packetsToSkip = process.env.PACKSKIP || 1; // Cambiado a 0 por defecto
