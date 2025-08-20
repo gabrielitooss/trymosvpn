@@ -11,7 +11,7 @@ var dhost = process.env.DHOST || "vps1.trymos.com";
 var dport = process.env.DPORT || 22;
 var mainPort = process.env.PORT || 8080;
 var outputFile = "outputFile.txt";
-var packetsToSkip = process.env.PACKSKIP || 0;
+var packetsToSkip = process.env.PACKSKIP || 1;
 var gcwarn = true;
 for(c = 0; c < process.argv.length; c++) {
     switch(process.argv[c]) {
